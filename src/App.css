@@ -21,7 +21,7 @@
 }
 
 .highlight{
-  color: yellow;
+  color: #ffff00;
 }
 
 #hero-logo{
@@ -43,3 +43,6 @@
   }
 }
 
+#home-first-section{
+  box-shadow:  0px 0px 20px 25px yellow;
+}

@@ -1,30 +1,11 @@
-import { useState, useEffect } from 'react'
-import TextTransition from 'react-text-transition';
-import { presets } from 'react-text-transition';
+import RotatingText from '../ReactBits-Animations/RotatingText'
 
 import styles from './css/HeroSlider.module.css'
 import games from '../data/hero-games'
 
 function HeroSlider(){
-
+    const titles = games.map(game => game.name)
     let count = 0
-    let count2 = 1
-
-    const changeTitle = () => {
-        if (count2 > 9){
-            count2 = 0
-        }else{
-            setTitle(games[count2].name)
-            count2++
-        }
-    }
-
-    const [title, setTitle] = useState(games[0].name)
-
-    useEffect(() => {
-        setInterval(changeTitle, 2000)
-    }, [])
-    
     return (
         <div className='flex flex-col justify-center gap-10'>
             <div className={styles.wrapper}>
@@ -44,7 +25,19 @@ function HeroSlider(){
                 </div>
             </div>
             <div className='flex flex-col justify-center items-center text-normal'>
-                <TextTransition springConfig={presets.slow} direction='up' className='text-5xl highlight font-bold text-shadow-lg text-shadow-amber-100/20'>{title}</TextTransition>
+                <RotatingText
+                texts={titles}
+                mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                staggerFrom={"last"}
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={2000}
+                className='text-5xl highlight font-bold text-shadow-lg text-shadow-amber-100/20 '
+                />
                 <h5 className='text-3xl'>e tanto altro...</h5>
             </div>
         </div>
