@@ -4,10 +4,9 @@ import './index.css'
 import App from './App.jsx'
 import { HeroUIProvider } from '@heroui/react'
 
+
 createRoot(document.getElementById('root')).render(
   <HeroUIProvider>
-    <main className='dark'>
-      <App />
-    </main>
+    <App />
   </HeroUIProvider>,
 )

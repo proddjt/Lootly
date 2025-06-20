@@ -2,3 +2,44 @@
   max-width: 100vw;
 }
 
+@font-face{
+  font-family: 'Getai Grotesk';
+  src: url('./src/assets/fonts/GetaiGroteskDisplay-Black.otf');
+}
+
+@font-face{
+  font-family: 'Geist';
+  src: url('./src/assets/fonts/Geist-VariableFont_wght.ttf');
+}
+
+.text-heading{
+  font-family: 'Getai Grotesk';
+}
+
+.text-normal{
+  font-family: 'Geist';
+}
+
+.highlight{
+  color: yellow;
+}
+
+#hero-logo{
+  animation-name: up-down;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes up-down{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-30px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+

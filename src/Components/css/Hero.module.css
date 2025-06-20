@@ -1,0 +1,8 @@
+.heroBg{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(10px) brightness(20%);
+}
