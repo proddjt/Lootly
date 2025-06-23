@@ -1,7 +1,7 @@
-import RotatingText from '../ReactBits-Animations/RotatingText'
+import RotatingText from '../../ReactBits-Animations/RotatingText'
 
-import styles from './css/HeroSlider.module.css'
-import games from '../data/hero-games'
+import styles from '../css/HeroSlider.module.css'
+import games from '../../data/hero-games'
 
 function HeroSlider(){
     const titles = games.map(game => game.name)

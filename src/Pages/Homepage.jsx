@@ -1,5 +1,5 @@
-import Hero from "../Components/Hero"
-import HomeFirstSection from "../Components/HomeFirstSection"
+import Hero from "../Components/Homepage/Hero"
+import HomeFirstSection from "../Components/Homepage/HomeFirstSection"
 
 function Homepage (){
     return (

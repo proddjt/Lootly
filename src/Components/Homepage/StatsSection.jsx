@@ -1,5 +1,5 @@
 
-import styles from "./css/StatsSection.module.css"
+import styles from "../css/StatsSection.module.css"
 
 function StatsSection(){
     return (

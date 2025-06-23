@@ -1,5 +1,5 @@
 import StatsSection from "./StatsSection"
-import DotGrid from "../ReactBits-Animations/DotGrid"
+import DotGrid from "../../ReactBits-Animations/DotGrid"
 
 function HomeFirstSection (){
     return (

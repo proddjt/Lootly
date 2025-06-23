@@ -1,11 +1,12 @@
-import NavBar from "./Components/Navbar"
+import { Outlet } from "react-router"
+import NavBar from "./Components/Navbar/Navbar"
 
-function Layout({ children }) {
+function Layout() {
     return(
         <>
             <div className="px-5">
                 <NavBar />
-                {children}
+                <Outlet />
             </div>
         </>
     )

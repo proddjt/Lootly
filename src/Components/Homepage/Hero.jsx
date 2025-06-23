@@ -1,10 +1,11 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { HiChevronDoubleDown } from "react-icons/hi2";
+
 import HeroSlider from "./HeroSlider"
-import styles from "./css/Hero.module.css"
+import styles from "../css/Hero.module.css"
 import { useEffect } from 'react';
 import HeroTexts from './HeroTexts';
-import { HiChevronDoubleDown } from "react-icons/hi2";
 
 function Hero (){
     useEffect(() => {
