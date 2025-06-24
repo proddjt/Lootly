@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import DataURLContext from "../../Context/DataURLContext";
 import DataGridTitleContext from "../../Context/DataGridTitleContext";
@@ -11,15 +11,23 @@ import GameCard from "./GameCard";
 import Paginator from "./Paginator";
 
 function DataGrid (){
-    const { title } = useContext(DataGridTitleContext);
-    const { url } = useContext(DataURLContext);
+    const { title, setTitle } = useContext(DataGridTitleContext);
+    const { url, setUrl } = useContext(DataURLContext);
     const { order } = useContext(OrderingContext);
     const { status, data } = useQuery({
         queryKey: ['games', url, order],
         queryFn: () => getData(url+order)
     });
+
+    useEffect(() => {
+        setTitle('Tutti i giochi')
+        setUrl('https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef')
+    }, [])
+
     if (status === 'error') return <Message text="Qualcosa è andato storto! Riprova"/>
     if (status === 'pending') return <SkeletonCard/>
+    
+    
 
     return (
         <div className="col-span-5">

@@ -42,7 +42,7 @@ function FiltersCol(){
     return (
         <div className="col-span-1 bg-neutral-800 rounded-xl py-10 px-5 text-normal text-lg h-auto">
             <OrderBox/>
-            <button className="hover:underline cursor-pointer text-3xl font-black mb-5 flex items-center gap-2" onClick={() => setFilter('https://api.rawg.io/api/genres?key=944825bd001f426384c5e9139fa3f0ef', 'Tutti i giochi')}><IoGameController />Tutti i giochi</button>
+            <button className="hover:underline cursor-pointer text-3xl font-black mb-5 flex items-center gap-2" onClick={() => setFilter('https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef', 'Tutti i giochi')}><IoGameController />Tutti i giochi</button>
             <ul className="font-black mb-5" ref={parent}><span className="text-3xl flex items-center gap-2"><FaBook />Generi</span>
                 {
                     genresStatus === 'pending' && <Loader/>

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
+import { create } from 'zustand'
 
 import Homepage from './Pages/Homepage'
 import './App.css'
@@ -11,8 +12,15 @@ import FavContext from './Context/FavContext'
 import DataURLContext from './Context/DataURLContext'
 import DataGridTitleContext from './Context/DataGridTitleContext'
 import OrderingContext from './Context/OrderingContext'
-
+import NotFound from './Pages/NotFound'
+import GameDetail from './Pages/GameDetail'
 const queryClient = new QueryClient()
+
+export const useMessageStore = create((set) => ({
+  message: "",
+  setMessage: (text) => set((state) => ({ message: text })),
+  resetMessage: () => set((state) => ({ message: "" }))
+}))
 
 function App() {
   const [user, setUser] = useState(null)
@@ -20,6 +28,7 @@ function App() {
   const [url, setUrl] = useState('https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef')
   const [title, setTitle] = useState('Tutti i giochi')
   const [order, setOrder] = useState('')
+  
   return (
     <div>
       <UserContext.Provider value={{user, setUser}}>
@@ -33,7 +42,9 @@ function App() {
               <Route path="/" element={<Homepage />} />
               <Route element={<Layout />}>
                 <Route path="/catalog" element={<Catalog />} />
+                <Route path="/games/:id" element={<GameDetail />} />
               </Route>
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
         </QueryClientProvider>

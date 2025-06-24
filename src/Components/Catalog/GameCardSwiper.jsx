@@ -15,11 +15,17 @@ function GameCardSwiper({images}){
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
       >
-        {images.map((image, index) => (
-          <SwiperSlide key={index}>
-            <img src={image.image} alt="Immagine gioco" />
+        {images && Object.keys(images).length > 0 ?
+          images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <img src={image.image} alt="Immagine gioco" />
+            </SwiperSlide>
+          ))
+          :
+          <SwiperSlide>
+            <img src="../src/assets/media/images/game-img-placeholder.webp" alt="Immagine gioco non presente" />
           </SwiperSlide>
-        ))}
+        }
       </Swiper>
     )
 }
