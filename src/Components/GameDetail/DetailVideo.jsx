@@ -54,7 +54,7 @@ function DetailVideo({id}){
                     >
                     {trailers.results.map((trailer, index) => (
                         <SwiperSlide key={index} className='border-1 border-[yellow] rounded-sm'>
-                            <img src={trailer.preview} alt={trailer.name}></img>
+                            <img src={trailer.preview} alt={trailer.name} loading='lazy'></img>
                         </SwiperSlide>
                     ))}
                     </Swiper>

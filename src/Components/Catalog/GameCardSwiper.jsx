@@ -18,12 +18,12 @@ function GameCardSwiper({images}){
         {images && Object.keys(images).length > 0 ?
           images.map((image, index) => (
             <SwiperSlide key={index}>
-              <img src={image.image} alt="Immagine gioco" />
+              <img src={image.image} alt="Immagine gioco" loading='lazy'/>
             </SwiperSlide>
           ))
           :
           <SwiperSlide>
-            <img src="../src/assets/media/images/game-img-placeholder.webp" alt="Immagine gioco non presente" />
+            <img src="../src/assets/media/images/game-img-placeholder.webp" alt="Immagine gioco non presente" loading='lazy'/>
           </SwiperSlide>
         }
       </Swiper>

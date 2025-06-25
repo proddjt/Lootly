@@ -16,7 +16,7 @@ function HeroSlider(){
                             return (
                                 <div key={game.id} className={styles.card} style={{"--index": count, "--color-card": "#1d1d1d"}}>
                                     <div className={styles.img}>
-                                        <img src={game.img} alt="game-img" className=''/>
+                                        <img src={game.img} alt="game-img" loading='lazy'/>
                                     </div>
                                 </div>
                             )

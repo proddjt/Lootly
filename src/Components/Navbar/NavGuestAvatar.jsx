@@ -8,7 +8,8 @@ function NavGuestAvatar (){
                 <div className="w-10 rounded-full">
                     <img
                     alt="Tailwind CSS Navbar component"
-                    src="https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg" />
+                    src="https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg"
+                    loading='lazy'/>
                 </div>
             </div>
             <ul

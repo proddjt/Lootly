@@ -8,6 +8,8 @@ import DetailVideo from "../Components/GameDetail/DetailVideo";
 import { isOld, formatDate } from "../lib/utils";
 import DetailStats from "../Components/GameDetail/DetailStats";
 import ReviewsChart from "../Components/GameDetail/ReviewsChart";
+import FavoriteBtn from "../Components/Catalog/FavoriteBtn";
+import WebsiteBtn from "../Components/GameDetail/WebsiteBtn";
 
 function GameDetail (){
     const {id} = useParams()
@@ -27,13 +29,18 @@ function GameDetail (){
             {game &&
                 <div className="main-bg">
                     <div className="h-[30vh] relative">
-                        {game.background_image && game.background_image !== "" && <img className="w-full h-full object-cover blur-xs" src={game.background_image} alt={game.name} />}
+                        {game.background_image && game.background_image !== "" && <img className="w-full h-full object-cover blur-xs" src={game.background_image} alt={game.name} loading='lazy'/>}
                         <div className="absolute top-0 left- w-full h-full flex justify-center items-center flex-col">
                             <h1 className="text-7xl font-black text-white text-normal text-shadow-lg/70 text-shadow-black">{game.name} {!isOld(game.released) && <span className="badge bg-[yellow] text-black text-normal font-bold italic p-1 rounded-sm text-lg text-shadow-none">New</span>}</h1>
                         </div>
                     </div>
-                    <div className="flex w-full mt-10 px-40 gap-10">
+                    <div className="flex w-full my-10 px-40 gap-10">
                         <div className="w-2/3 flex flex-col">
+                            <div className="flex justify-between items-center w-full mb-10">
+                                <FavoriteBtn id={game.id} />
+                                {game.website && game.website !== "" && <WebsiteBtn website={game.website} />}
+                                
+                            </div>
                             <p className="text-normal text-3xl font-black highlight uppercase pb-5">Informazioni</p>
                             <div className="flex w-full detail-card rounded-xl">
                                 <div className="w-1/2">
@@ -46,7 +53,7 @@ function GameDetail (){
                                 <div className="w-1/2">
                                     <p className="text-normal font-semibold pb-2">Sviluppato da: {game.developers && game.developers.length > 0 ? game.developers.map(developer => <span key={developer.id} className="badge bg-[yellow] text-black text-normal font-bold p-1 rounded-sm text-xs mx-1">{developer.name}</span>) : 'N/A'}</p>
                                     <p className="text-normal font-semibold pb-2">Rilasciato il: {game.released ? formatDate(game.released) : 'Non disponibile'}</p>
-                                    <p className="text-normal font-semibold pb-2">Acquistalo su: {game.stores && game.stores.length > 0 ? game.stores.map(store => <span key={store.id} className="badge bg-[yellow] text-black text-normal font-bold p-1 rounded-sm text-xs mx-1">{store.store.name}</span>) : 'N/A'}</p>
+                                    <p className="text-normal font-semibold pb-2">Acquistabile su: {game.stores && game.stores.length > 0 ? game.stores.map(store => <span key={store.id} className="badge bg-[yellow] text-black text-normal font-bold p-1 rounded-sm text-xs mx-1">{store.store.name}</span>) : 'N/A'}</p>
                                 </div>
                             </div>
                             <p className="text-normal text-3xl font-black highlight uppercase pb-5 mt-10">Valutazione</p>

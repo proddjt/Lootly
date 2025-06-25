@@ -7,7 +7,7 @@ function DetailStats ({rating, rating_top, ratings_count}){
     const topStars = calculateStars(rating_top);
     return (
         <div className={styles.card}>
-            <div className={styles.statsWrapper}>
+            <div className={`${styles.statsWrapper} border-4 border-black`}>
                 <p className={`${styles.heading} text-normal text-md text-center`}>Valutazione attuale</p>
                 <div className={styles.bottomWrapper}>
                     <div className="flex justify-center items-center text-3xl font-black text-[yellow] flex-col">
@@ -16,7 +16,7 @@ function DetailStats ({rating, rating_top, ratings_count}){
                     </div>
                 </div>
             </div>
-            <div className={styles.statsWrapper}>
+            <div className={`${styles.statsWrapper} border-4 border-black`}>
                 <p className={`${styles.heading} text-normal text-md text-center`}>Top valutazione</p>
                 <div className={styles.bottomWrapper}>
                     <div className="flex justify-center items-center text-3xl font-black text-[yellow] flex-col">
@@ -25,7 +25,7 @@ function DetailStats ({rating, rating_top, ratings_count}){
                     </div>
                 </div>
             </div>
-            <div className={styles.statsWrapper}>
+            <div className={`${styles.statsWrapper} border-4 border-black`}>
                 <p className={`${styles.heading} text-normal text-md text-center`}>Numero recensioni</p>
                 <div className={styles.bottomWrapper}>
                     <div className="flex justify-center items-center text-3xl font-black text-[yellow]">
