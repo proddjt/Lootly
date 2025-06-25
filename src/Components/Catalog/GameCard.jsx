@@ -5,23 +5,10 @@ import DataURLContext from "../../Context/DataURLContext";
 import DataGridTitleContext from "../../Context/DataGridTitleContext";
 import { Link } from "react-router";
 import FavoriteBtn from "./FavoriteBtn";
+import { calculateStars, formatDate, isOld } from "../../lib/utils";
 
 function GameCard({game}){
-    const calculateStars = (num) => {
-        return Math.round(num / 0.5) * 0.5;
-    }
-    function formatDate(date) {
-        const [year, month, day] = date.split('-');
-        return `${day}-${month}-${year}`;
-    }
-
-    function isOld(date) {
-        const releaseDate = new Date(date);
-        const today = new Date();
-
-        const msInTwoWeeks = 14 * 24 * 60 * 60 * 1000;
-        return today - releaseDate > msInTwoWeeks;
-    }
+    
     const {setUrl} = useContext(DataURLContext)
     const {setTitle} = useContext(DataGridTitleContext)
     const stars = calculateStars(game.rating);

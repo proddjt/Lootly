@@ -1,8 +1,8 @@
 Librerie che sto usando:
 
 Routing -> React Router
-Components -> DaisyUI
+Components -> DaisyUI, Swiper
 Animazioni -> AutoAnimate, Motion, AOS, ReactBits
 Query -> Tanstack
-Stile -> React Icons, Tailwind, Swiper
+Stile -> React Icons, Tailwind
 Gestione Global State -> Zustand

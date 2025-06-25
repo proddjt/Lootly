@@ -2,18 +2,18 @@
   max-width: 100vw;
 }
 
-main{
-  background: url('./src/assets/media/images/catalog-bg.webp');
+.main-bg{
+  background: url('./bg.webp');
 }
 
 @font-face{
   font-family: 'Getai Grotesk';
-  src: url('./src/assets/fonts/GetaiGroteskDisplay-Black.otf');
+  src: url('/Fonts/GetaiGroteskDisplay-Black.otf') format('opentype');
 }
 
 @font-face{
   font-family: 'Geist';
-  src: url('./src/assets/fonts/Geist-VariableFont_wght.ttf');
+  src: url('/Fonts/Geist-VariableFont_wght.ttf') format('truetype') ;
 }
 
 .text-heading{
@@ -155,3 +155,10 @@ main{
   transform: translate(0px, 0%);
   opacity: 1;
 }
+
+.detail-card{
+  background-color: #282828;
+  padding: 1.5rem;
+}
+
+

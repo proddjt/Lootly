@@ -26,7 +26,9 @@ function NavBar(){
                 </div>
             </div>
             <div className="navbar-center">
-                <h5 className="hover:outline-3 px-2 py-1 outline-black text-xl text-normal font-black rounded-lg cursor-default">Lootly</h5>
+                <Link to={'/catalog'}>
+                    <h5 className="hover:outline-3 px-2 py-1 outline-black text-xl text-normal font-black rounded-lg tooltip tooltip-primary tooltip-right cursor-pointer" data-tip="Catalogo Lootly">Lootly</h5>
+                </Link>
             </div>
             <div className="navbar-end gap-5">
                 <p className="hidden md:block text-normal font-bold">Ciao {user ? user.name : 'utente'} <PiHandWavingFill className="inline text-2xl"/></p>

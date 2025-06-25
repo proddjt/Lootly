@@ -8,7 +8,7 @@ import InfoMessage from '../Components/InfoMessage'
 function Catalog (){
     const message = useMessageStore((state) => state.message);
     return (
-        <main>
+        <div className='main-bg'>
             {
                 message && message!= "" && <InfoMessage text={message} />
             }
@@ -17,7 +17,7 @@ function Catalog (){
                 <FiltersCol />
                 <DataGrid />
             </div>
-        </main>
+        </div>
    )
 }
 

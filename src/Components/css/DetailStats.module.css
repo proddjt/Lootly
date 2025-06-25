@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+}
+
+.statsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  height: 130px;
+  border-radius: 20px;
+  background-color: #282828;
+  padding: 15px;
+}
+.heading {
+  font-weight: 700;
+}
+.bottomWrapper {
+  width: 100%;
+}
