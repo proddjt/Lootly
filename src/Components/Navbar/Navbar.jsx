@@ -3,13 +3,27 @@ import { PiHandWavingFill } from "react-icons/pi";
 import { RiHome3Fill } from "react-icons/ri";
 import { MdRateReview } from "react-icons/md";
 import { TiThMenu } from "react-icons/ti";
+import supabase from "../../supabase/supabase-client";
+import { useContext } from "react";
+import { useMessageStore } from "../../App";
 
 import NavUserAvatar from "./NavUserAvatar"
 import NavGuestAvatar from "./NavGuestAvatar"
+import SessionContext from "../../Context/SessionContext";
 
 
 function NavBar(){
-    const user = null
+    const {session} = useContext(SessionContext);
+    const user = session ? session.user : null
+    
+    const setMessage = useMessageStore((state) => state.setMessage);
+    const signOut = async () => {
+        const { error } = await supabase.auth.signOut()
+        if (error) console.log(error);
+        setMessage("Logout avvenuto con successo")
+    }
+    
+    
     return (
         <div className="navbar bg-[yellow] shadow-sm rounded-xl mt-2 text-black px-4">
             <div className="navbar-start">
@@ -31,8 +45,8 @@ function NavBar(){
                 </Link>
             </div>
             <div className="navbar-end gap-5">
-                <p className="hidden md:block text-normal font-bold">Ciao {user ? user.name : 'utente'} <PiHandWavingFill className="inline text-2xl"/></p>
-                { user ? <NavUserAvatar /> : <NavGuestAvatar /> }
+                <p className="hidden md:block text-normal font-bold">Ciao {user ? user.user_metadata.username : 'utente'} <PiHandWavingFill className="inline text-2xl"/></p>
+                { user ? <NavUserAvatar signOut={signOut}/> : <NavGuestAvatar /> }
             </div>
         </div>
     )

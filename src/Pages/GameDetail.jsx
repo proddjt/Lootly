@@ -10,8 +10,11 @@ import DetailStats from "../Components/GameDetail/DetailStats";
 import ReviewsChart from "../Components/GameDetail/ReviewsChart";
 import FavoriteBtn from "../Components/Catalog/FavoriteBtn";
 import WebsiteBtn from "../Components/GameDetail/WebsiteBtn";
+import { useMessageStore } from "../App";
+import InfoMessage from "../Components/InfoMessage";
 
 function GameDetail (){
+    const message = useMessageStore((state) => state.message);
     const {id} = useParams()
     const url = `https://api.rawg.io/api/games/${id}?key=944825bd001f426384c5e9139fa3f0ef`
     const { status, data: game } = useQuery({
@@ -26,6 +29,9 @@ function GameDetail (){
     
     return (
         <>
+            {
+                message && message!= "" && <InfoMessage text={message} />
+            }
             {game &&
                 <div className="main-bg">
                     <div className="h-[30vh] relative">

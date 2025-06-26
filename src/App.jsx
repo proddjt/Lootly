@@ -2,19 +2,21 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 import { create } from 'zustand'
+const queryClient = new QueryClient()
 
 import Homepage from './Pages/Homepage'
 import './App.css'
 import Catalog from './Pages/Catalog'
 import Layout from './Layout'
-import UserContext from './Context/UserContext'
 import FavContext from './Context/FavContext'
 import DataURLContext from './Context/DataURLContext'
 import DataGridTitleContext from './Context/DataGridTitleContext'
 import OrderingContext from './Context/OrderingContext'
 import NotFound from './Pages/NotFound'
 import GameDetail from './Pages/GameDetail'
-const queryClient = new QueryClient()
+import Register from './Pages/Register'
+import Login from './Pages/Login'
+import SessionProvider from './Context/SessionProvider'
 
 export const useMessageStore = create((set) => ({
   message: "",
@@ -31,7 +33,7 @@ function App() {
   
   return (
     <div>
-      <UserContext.Provider value={{user, setUser}}>
+      <SessionProvider>
       <FavContext.Provider value={{favs, setFavs}}>
       <DataURLContext.Provider value={{url, setUrl}}>
       <DataGridTitleContext.Provider value={{title, setTitle}}>
@@ -39,6 +41,8 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
             <Routes>
+              <Route path='/register' element={<Register />}/>
+              <Route path='/login' element={<Login />}/>
               <Route path="/" element={<Homepage />} />
               <Route element={<Layout />}>
                 <Route path="/catalog" element={<Catalog />} />
@@ -52,7 +56,7 @@ function App() {
       </DataGridTitleContext.Provider>
       </DataURLContext.Provider>
       </FavContext.Provider>
-      </UserContext.Provider>
+      </SessionProvider>
     </div>
   )
 }

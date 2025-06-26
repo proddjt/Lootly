@@ -1,4 +1,5 @@
 import { RiLoginBoxLine } from "react-icons/ri";
+import { FaUserPlus } from "react-icons/fa6";
 import { Link } from "react-router";
 
 function NavGuestAvatar (){
@@ -16,6 +17,7 @@ function NavGuestAvatar (){
             tabIndex={0}
             className="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-[yellow]">
                 <Link to={'/login'}><li className="py-1 font-semibold bg-neutral-700 hover:bg-neutral-500"><p><RiLoginBoxLine className="inline text-2xl"/>Accedi</p></li></Link>
+                <Link to={'/register'}><li className="py-1 font-semibold bg-neutral-700 hover:bg-neutral-500"><p><FaUserPlus className="inline text-2xl"/>Registrati</p></li></Link>
             </ul>
         </div>
     )

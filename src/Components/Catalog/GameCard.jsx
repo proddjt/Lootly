@@ -31,7 +31,7 @@ function GameCard({game}){
                 Disponibile per: <br /> {game.platforms && game.platforms.length > 0 ? game.platforms.map(platform => <span key={platform.platform.id} className="badge bg-[yellow] text-black text-normal font-bold p-1 rounded-sm text-xs me-1 cursor-pointer hover:bg-yellow-100" onClick={() => {setUrl(`https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef&platforms=${platform.platform.id}`); setTitle(platform.platform.name)}}>{platform.platform.name}</span>) : 'Non disponibile'}
                 </p>
             </div>
-            <div className="p-6 pt-0">
+            <div className="p-6 pt-0 flex justify-center">
                 <FavoriteBtn id={game.id} />
             </div>
         </div>

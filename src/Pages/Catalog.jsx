@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useMessageStore } from '../App'
 
 import DataGrid from '../Components/Catalog/DataGrid'
@@ -7,6 +8,10 @@ import InfoMessage from '../Components/InfoMessage'
 
 function Catalog (){
     const message = useMessageStore((state) => state.message);
+    const setMessage = useMessageStore((state) => state.setMessage);
+    useEffect(() => {
+        setMessage("")
+    }, [])
     return (
         <div className='main-bg'>
             {
