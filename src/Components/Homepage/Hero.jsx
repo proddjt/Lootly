@@ -6,6 +6,7 @@ import HeroSlider from "./HeroSlider"
 import styles from "../css/Hero.module.css"
 import { useEffect } from 'react';
 import HeroTexts from './HeroTexts';
+import StatsSection from './StatsSection';
 
 function Hero (){
     useEffect(() => {
@@ -20,15 +21,11 @@ function Hero (){
             <div className='flex justify-center items-center w-full h-18/20 md:flex-row flex-col'>
                 <div className="flex justify-center flex-col w-[50vw] items-center gap-10" data-aos="fade-left">
                     <HeroTexts />
+                    <StatsSection />
                 </div>
                 <div data-aos="fade-right">
                     <HeroSlider />
                 </div>
-            </div>
-            <div className='flex justify-center max-w-full'>
-                <a href="#home-first-section">
-                    <HiChevronDoubleDown className='text-6xl highlight animate-bounce' />
-                </a>
             </div>
         </header>
         </>

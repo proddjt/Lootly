@@ -19,6 +19,8 @@ import Login from './Pages/Login'
 import SessionProvider from './Context/SessionProvider'
 import UserRoutes from './Pages/Middleware/UserRoutes'
 import FavoriteGames from './Pages/FavoriteGames'
+import Publishers from './Pages/Publishers'
+import Stores from './Pages/Stores'
 
 export const useMessageStore = create((set) => ({
   message: "",
@@ -47,6 +49,8 @@ function App() {
               <Route element={<Layout />}>
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/games/:id" element={<GameDetail />} />
+                <Route path='/publishers' element={<Publishers />}/>
+                <Route path='/stores' element={<Stores />}/>
               </Route>
               <Route element={<UserRoutes />}>
                 <Route element={<Layout />}>

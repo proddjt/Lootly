@@ -30,7 +30,7 @@ function GameDetail (){
                 message && message!= "" && <InfoMessage text={message} />
             }
             {game &&
-                <div className="main-bg">
+                <>
                     <div className="h-[30vh] relative">
                         {game.background_image && game.background_image !== "" && <img className="w-full h-full object-cover blur-xs" src={game.background_image} alt={game.name} loading='lazy'/>}
                         <div className="absolute top-0 left- w-full h-full flex justify-center items-center flex-col">
@@ -74,7 +74,7 @@ function GameDetail (){
                             <DetailVideo id={id} />
                         </div>
                     </div>
-                </div>
+                </>
             }
         </>
     )

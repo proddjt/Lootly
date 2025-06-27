@@ -15,7 +15,7 @@ function GameCard({game}){
     const releaseDate = game.released ? formatDate(game.released) : 'Non disponibile';
     const isOlderThanTwoWeeks = game.released ? isOld(game.released) : true;
     const images = game.short_screenshots.length > 0 ? game.short_screenshots : [];
-
+    
     return(
         <div className="relative flex w-80 flex-col rounded-xl bg-neutral-900 bg-clip-border text-white shadow-md col-span-1 hover:scale-105 transition duration-300">
             <div className={`relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-[${game.dominant_color}]`}>

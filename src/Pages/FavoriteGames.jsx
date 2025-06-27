@@ -7,7 +7,7 @@ function FavoriteGames(){
     const {favs} = useContext(FavContext)
     const [parent] = useAutoAnimate()
     return (
-        <div className="main-bg min-h-screen">
+        <div className="min-h-screen">
             <div className="flex justify-center pb-8 pt-10">
                     <h1 className="text-normal text-4xl font-black">I tuoi giochi preferiti {favs && "(" +favs.length+ ")"}</h1>
             </div>

@@ -24,7 +24,7 @@
 .statTitle {
   grid-column-start: 1;
   white-space: nowrap;
-  color: rgb(197, 194, 194);
+  color: yellow;
 }
 
 .statValue {
@@ -40,5 +40,5 @@
   white-space: nowrap;
   font-size: 0.75rem;
   line-height: 1rem;
-  color: rgb(197, 194, 194);
+  color: yellow;
 }

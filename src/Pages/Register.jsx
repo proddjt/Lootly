@@ -37,6 +37,7 @@ function Register (){
                 <img src="../src/assets/media/images/logo.png" alt="Logo" className="w-20 animate-bounce" loading='lazy'/>
             </div>
             <RegisterForm />
+            <p className="text-normal mt-5 z-1">Hai già un account? <Link to={'/login'} className="text-[yellow] hover:underline cursor-pointer">Accedi</Link></p>
             <div className="flex justify-center items-center gap-5 mt-10">
                 <Link to={'/'} ><LinkBtn text="Torna alla home"/></Link>
                 <Link to={'/catalog'}><LinkBtn text="Torna al catalogo"/></Link>

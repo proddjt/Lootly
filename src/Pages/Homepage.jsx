@@ -5,7 +5,6 @@ function Homepage (){
     return (
         <>
             <Hero />
-            <HomeFirstSection />
         </>
     )
 }

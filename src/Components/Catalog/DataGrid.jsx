@@ -26,8 +26,6 @@ function DataGrid (){
 
     if (status === 'error') return <Message text="Qualcosa è andato storto! Riprova"/>
     if (status === 'pending') return <SkeletonCard/>
-    
-    
 
     return (
         <div className="col-span-5">

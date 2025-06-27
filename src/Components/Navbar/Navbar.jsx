@@ -3,6 +3,8 @@ import { PiHandWavingFill } from "react-icons/pi";
 import { RiHome3Fill } from "react-icons/ri";
 import { MdRateReview } from "react-icons/md";
 import { TiThMenu } from "react-icons/ti";
+import { FaStore } from "react-icons/fa";
+import { MdOutlinePublic } from "react-icons/md";
 import supabase from "../../supabase/supabase-client";
 import { useContext } from "react";
 import { useMessageStore } from "../../App";
@@ -35,7 +37,8 @@ function NavBar(){
                     tabIndex={0}
                     className="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-[yellow]">
                         <Link to={'/'}><li className="ps-2 py-1 font-semibold bg-neutral-700 hover:bg-neutral-500"><p><RiHome3Fill className="inline text-2xl"/>Home</p></li></Link>
-                        <Link to={'/reviews'}><li className="ps-2 py-1 font-semibold bg-neutral-700 hover:bg-neutral-500"><p><MdRateReview className="inline text-2xl"/>Reviews</p></li></Link>
+                        <Link to={'/publishers'}><li className="ps-2 py-1 font-semibold bg-neutral-700 hover:bg-neutral-500"><p><MdOutlinePublic className="inline text-2xl"/>Editors</p></li></Link>
+                        <Link to={'/stores'}><li className="ps-2 py-1 font-semibold bg-neutral-700 hover:bg-neutral-500"><p><FaStore className="inline text-2xl"/>Stores</p></li></Link>
                     </ul>
                 </div>
             </div>

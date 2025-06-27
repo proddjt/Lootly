@@ -13,7 +13,7 @@ function Catalog (){
         setMessage("")
     }, [])
     return (
-        <div className='main-bg'>
+        <>
             {
                 message && message!= "" && <InfoMessage text={message} />
             }
@@ -22,7 +22,7 @@ function Catalog (){
                 <FiltersCol />
                 <DataGrid />
             </div>
-        </div>
+        </>
    )
 }
 
