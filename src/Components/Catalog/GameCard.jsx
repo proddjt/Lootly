@@ -32,7 +32,7 @@ function GameCard({game}){
                 </p>
             </div>
             <div className="p-6 pt-0 flex justify-center">
-                <FavoriteBtn id={game.id} />
+                <FavoriteBtn id={game.id} name={game.name} img={game.background_image} />
             </div>
         </div>
     )

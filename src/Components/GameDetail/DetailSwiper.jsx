@@ -15,9 +15,6 @@ function DetailSwiper({id}) {
         queryKey: ['game images', url],
         queryFn: () => getData(url)
     });
-    console.log(images);
-    
-    
     if (status === 'pending') return (<div className="flex justify-center items-center"><Loader/></div>);
     return (
         <div className='mb-20'>

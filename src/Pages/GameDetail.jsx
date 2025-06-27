@@ -21,9 +21,6 @@ function GameDetail (){
         queryKey: ['game detail', url],
         queryFn: () => getData(url)
     });
-    console.log(game);
-    
-
     if (status === 'pending') return (<div className="flex justify-center items-center"><Loader/></div>);
     if (status === 'error') return  (<div className="flex justify-center items-center"><Message text="Qualcosa è andato storto! Riprova"/></div>)
     

@@ -8,7 +8,7 @@ import Homepage from './Pages/Homepage'
 import './App.css'
 import Catalog from './Pages/Catalog'
 import Layout from './Layout'
-import FavContext from './Context/FavContext'
+import FavProvider from './Context/FavProvider'
 import DataURLContext from './Context/DataURLContext'
 import DataGridTitleContext from './Context/DataGridTitleContext'
 import OrderingContext from './Context/OrderingContext'
@@ -17,6 +17,8 @@ import GameDetail from './Pages/GameDetail'
 import Register from './Pages/Register'
 import Login from './Pages/Login'
 import SessionProvider from './Context/SessionProvider'
+import UserRoutes from './Pages/Middleware/UserRoutes'
+import FavoriteGames from './Pages/FavoriteGames'
 
 export const useMessageStore = create((set) => ({
   message: "",
@@ -25,8 +27,6 @@ export const useMessageStore = create((set) => ({
 }))
 
 function App() {
-  const [user, setUser] = useState(null)
-  const [favs, setFavs] = useState([])
   const [url, setUrl] = useState('https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef')
   const [title, setTitle] = useState('Tutti i giochi')
   const [order, setOrder] = useState('')
@@ -34,7 +34,7 @@ function App() {
   return (
     <div>
       <SessionProvider>
-      <FavContext.Provider value={{favs, setFavs}}>
+      <FavProvider>
       <DataURLContext.Provider value={{url, setUrl}}>
       <DataGridTitleContext.Provider value={{title, setTitle}}>
       <OrderingContext.Provider value={{order, setOrder}}>
@@ -48,6 +48,11 @@ function App() {
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/games/:id" element={<GameDetail />} />
               </Route>
+              <Route element={<UserRoutes />}>
+                <Route element={<Layout />}>
+                  <Route path='/games/favorites' element={<FavoriteGames />} />
+                </Route>
+              </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
@@ -55,7 +60,7 @@ function App() {
       </OrderingContext.Provider>
       </DataGridTitleContext.Provider>
       </DataURLContext.Provider>
-      </FavContext.Provider>
+      </FavProvider>
       </SessionProvider>
     </div>
   )

@@ -40,7 +40,7 @@ function FiltersCol(){
     if (genresStatus === 'error' || platStatus === 'error') return <Message text="Qualcosa è andato storto! Riprova"/>;
     
     return (
-        <div className="col-span-1 bg-neutral-800 rounded-xl py-10 px-5 text-normal text-lg h-auto">
+        <div className="col-span-1 bg-neutral-800 rounded-xl py-10 px-5 text-normal text-lg self-start">
             <OrderBox/>
             <button className="hover:underline cursor-pointer text-3xl font-black mb-5 flex items-center gap-2" onClick={() => setFilter('https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef', 'Tutti i giochi')}><IoGameController />Tutti i giochi</button>
             <ul className="font-black mb-5" ref={parent}><span className="text-3xl flex items-center gap-2"><FaBook />Generi</span>
@@ -85,7 +85,7 @@ function FiltersCol(){
                     showAllPlatforms && <button className="hover:text-yellow-200 cursor-pointer text-[yellow]" onClick={() => setShowAllPlatforms(!showAllPlatforms)}><BsArrowUpSquareFill className="inline"/> Mostra meno</button>
                 }
             </ul>
-            <Link to="/favorites" className="font-black mb-5 hover:underline cursor-pointer"><span className="text-3xl flex items-center gap-2"><FaHeartCircleBolt />Giochi preferiti</span></Link>
+            <Link to="/games/favorites" className="font-black mb-5 hover:underline cursor-pointer"><span className="text-3xl flex items-center gap-2"><FaHeartCircleBolt />Giochi preferiti</span></Link>
         </div>
     )
 }
