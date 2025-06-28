@@ -21,6 +21,7 @@ import UserRoutes from './Pages/Middleware/UserRoutes'
 import FavoriteGames from './Pages/FavoriteGames'
 import Publishers from './Pages/Publishers'
 import Stores from './Pages/Stores'
+import UserProfile from './Pages/UserProfile'
 
 export const useMessageStore = create((set) => ({
   message: "",
@@ -55,6 +56,7 @@ function App() {
               <Route element={<UserRoutes />}>
                 <Route element={<Layout />}>
                   <Route path='/games/favorites' element={<FavoriteGames />} />
+                  <Route path='/profile' element={<UserProfile />} />
                 </Route>
               </Route>
               <Route path="*" element={<NotFound />} />
