@@ -6,8 +6,8 @@ import SumUpSection from "../Components/UserProfile/SumUpSection"
 import Success from "../Components/Success"
 import Message from "../Components/Message"
 import { ConfirmSchemaUpdate, getErrors } from "../lib/validationForm"
-import { set } from "zod"
 import FavSection from "../Components/UserProfile/FavsSection"
+import AvatarUrlContext from "../Context/AvatarUrlContext"
 
 function UserProfile(){
     const [isEdit, setIsEdit] = useState(false)
@@ -20,7 +20,7 @@ function UserProfile(){
         surname: '',
         username: ''
     })
-    const [avatarUrl, setAvatarUrl] = useState(null);
+    const {avatarUrl, setAvatarUrl} = useContext(AvatarUrlContext);
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
     useEffect(() => {
@@ -117,7 +117,7 @@ function UserProfile(){
             <div className="flex justify-center items-center">
                 <h1 className="text-normal text-4xl font-black highlight">Il tuo profilo</h1>
             </div>
-            <div className="w-full h-full grid grid-cols-8 gap-15 ">
+            <div className="w-full h-full grid grid-cols-6 gap-15 ">
                 <SumUpSection isEdit={isEdit} setIsEdit={setIsEdit} session={session} url={avatarUrl} onUpload={(event, url) => updateAvatar(url)} setSuccess={setSuccess} setError={setError}/>
                 <DetailsSection isEdit={isEdit} setIsEdit={setIsEdit} session={session} state={state} setState={setState} updateProfile={updateProfile} errors={errors} setErrors={setErrors} touchedFields={touchedFields} setTouchedFields={setTouchedFields} submitted={submitted}/>
                 { success && success != "" && <Success text={success} /> }

@@ -1,24 +1,11 @@
-/* From Uiverse.io by Voxybuns */ 
-button {
-  /* Variables */
-  --button_radius: 0.75em;
-  --button_color: yellow;
-  --button_outline_color: #000000;
-  font-size: 17px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  border-radius: var(--button_radius);
-  background: var(--button_outline_color);
-}
 
 .buttonTop {
   box-sizing: border-box;
-  border: 2px solid var(--button_outline_color);
-  border-radius: var(--button_radius);
+  border: 2px solid var(black);
+  border-radius: var(0.75em);
   padding: 0.75em 1.5em;
-  background: var(--button_color);
-  color: var(--button_outline_color);
+  background: var(yellow);
+  color: var(black);
   transform: translateY(-0.2em);
   transition: transform 0.1s ease;
 }

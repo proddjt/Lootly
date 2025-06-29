@@ -1,15 +1,27 @@
 import { RiUserSettingsFill, RiPokerHeartsFill, RiLogoutBoxLine } from "react-icons/ri";
 import { Link } from "react-router";
+import { useContext } from "react";
+import AvatarUrlContext from "../../Context/AvatarUrlContext";
+import supabase from "../../supabase/supabase-client";
 
 function NavUserAvatar ({signOut}){
+    const {avatarUrl} = useContext(AvatarUrlContext);
     return (
         <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                    <img
-                    alt="Tailwind CSS Navbar component"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                    loading='lazy'/>
+                    {
+                        avatarUrl ?
+                        <img
+                        alt="Immagine profilo user"
+                        src={avatarUrl}
+                        loading='lazy'/> :
+                        <img
+                        alt="Immagine profilo user"
+                        src="./download.png"
+                        loading='lazy'/>
+                    }
+                    
                 </div>
             </div>
             <ul

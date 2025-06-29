@@ -22,6 +22,7 @@ import FavoriteGames from './Pages/FavoriteGames'
 import Publishers from './Pages/Publishers'
 import Stores from './Pages/Stores'
 import UserProfile from './Pages/UserProfile'
+import AvatarUrlContext from './Context/AvatarUrlContext'
 
 export const useMessageStore = create((set) => ({
   message: "",
@@ -33,10 +34,12 @@ function App() {
   const [url, setUrl] = useState('https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef')
   const [title, setTitle] = useState('Tutti i giochi')
   const [order, setOrder] = useState('')
+  const [avatarUrl, setAvatarUrl] = useState('')
   
   return (
     <div>
       <SessionProvider>
+      <AvatarUrlContext.Provider value={{avatarUrl, setAvatarUrl}}>
       <FavProvider>
       <DataURLContext.Provider value={{url, setUrl}}>
       <DataGridTitleContext.Provider value={{title, setTitle}}>
@@ -67,6 +70,7 @@ function App() {
       </DataGridTitleContext.Provider>
       </DataURLContext.Provider>
       </FavProvider>
+      </AvatarUrlContext.Provider>
       </SessionProvider>
     </div>
   )

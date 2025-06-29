@@ -24,7 +24,7 @@ function DetailsSection({isEdit, setIsEdit, session, state, setState, updateProf
             setState((prev) => ({ ...prev, [p]: valueSelector ? valueSelector(e) : e.target.value }));
         };
     return (
-        <form className="col-span-5 flex flex-col gap-5 bg-neutral-800 p-10 self-center" onSubmit={updateProfile} noValidate>
+        <form className="col-span-4 flex flex-col gap-5 bg-neutral-800 p-10 self-center" onSubmit={updateProfile} noValidate>
             <div className="flex flex-row justify-center gap-5">
                 <div className="flex flex-col gap-3 w-1/2">
                     <label className="text-normal text-2xl highlight font-semibold" htmlFor="text">{isEdit ? 'Qual è il tuo nome?' : 'Nome'}</label>
