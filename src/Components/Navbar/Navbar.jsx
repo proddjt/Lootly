@@ -39,14 +39,13 @@ function NavBar(){
                 .eq('id', user.id)
                 .single()
             if (error){
-                console.log(error);
+                console.log("errore");
             } else if (data){
                 downloadImage(data.avatar_url)
-                console.log(data.avatar_url);  
             }
         }
         getAvatar();
-    }, []);
+    }, [avatarUrl]);
 
     const downloadImage = async (path) => {
         try {

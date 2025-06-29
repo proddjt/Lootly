@@ -20,7 +20,8 @@ function UserProfile(){
         surname: '',
         username: ''
     })
-    const {avatarUrl, setAvatarUrl} = useContext(AvatarUrlContext);
+    const [localAvatarUrl, setLocalAvatarUrl] = useState(null);
+    const { setAvatarUrl } = useContext(AvatarUrlContext);
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
     useEffect(() => {
@@ -41,7 +42,7 @@ function UserProfile(){
                         username: data.username
                     }
                 )
-                setAvatarUrl(data.avatar_url)
+                setLocalAvatarUrl(data.avatar_url)
             }
         }
         getProfile();
@@ -89,11 +90,11 @@ function UserProfile(){
         }
     }
 
-    const updateAvatar = async (avatarUrl) => {
+    const updateAvatar = async (localAvatarUrl) => {
         const { user } = session
         const updates = {
             id: user.id,
-            avatar_url: avatarUrl,
+            avatar_url: localAvatarUrl,
             updated_at: new Date(),
         }
         const { error } = await supabase.from('profiles').upsert(updates)
@@ -105,7 +106,8 @@ function UserProfile(){
         } else {
             setIsEdit(false)
             setSuccess("Immagine aggiornata con successo!")
-            setAvatarUrl(avatarUrl)
+            setLocalAvatarUrl(localAvatarUrl)
+            setAvatarUrl(localAvatarUrl)
             setTimeout(() => {
                 setSuccess(null)
             }, 5010);
@@ -118,7 +120,7 @@ function UserProfile(){
                 <h1 className="text-normal text-4xl font-black highlight">Il tuo profilo</h1>
             </div>
             <div className="w-full h-full grid grid-cols-6 gap-15 ">
-                <SumUpSection isEdit={isEdit} setIsEdit={setIsEdit} session={session} url={avatarUrl} onUpload={(event, url) => updateAvatar(url)} setSuccess={setSuccess} setError={setError}/>
+                <SumUpSection isEdit={isEdit} setIsEdit={setIsEdit} session={session} url={localAvatarUrl} onUpload={(event, url) => updateAvatar(url)} setSuccess={setSuccess} setError={setError}/>
                 <DetailsSection isEdit={isEdit} setIsEdit={setIsEdit} session={session} state={state} setState={setState} updateProfile={updateProfile} errors={errors} setErrors={setErrors} touchedFields={touchedFields} setTouchedFields={setTouchedFields} submitted={submitted}/>
                 { success && success != "" && <Success text={success} /> }
                 { error && error != "" && <Message text={error} /> }
