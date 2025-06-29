@@ -22,7 +22,7 @@ function HomeFirstSection (){
                 <div className="flex justify-center items-center w-full">
                     <div className="w-1/2 text-center p-5">
                         <p className="text-black text-normal font-semibold text-2xl bg-white p-4 rounded-lg shadow-black shadow-2xl">
-                            <span className="font-black text-4xl">Hai voglia di qualcosa di nuovo, ma non sai da dove cominciare?<br></br></span>
+                            <span className="font-bold text-4xl">Hai voglia di qualcosa di nuovo, ma non sai da dove cominciare?<br></br></span>
                             Nessun problema. Grazie a un sistema intelligente basato su categorie, valutazioni e popolarità, potrai filtrare e scoprire giochi in base ai tuoi gusti, senza perdere tempo tra decine di siti o recensioni dispersive.
                         </p>
                     </div>

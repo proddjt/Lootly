@@ -25,8 +25,6 @@ function LoginForm(){
         e.preventDefault();
         setSubmitted(true);
         const { error, data } = ConfirmSchemaLogin.safeParse(state);
-        console.log(state);
-        
         if (error) {
             const errors = getErrors(error);
             setErrors(errors);

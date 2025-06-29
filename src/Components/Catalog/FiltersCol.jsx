@@ -42,8 +42,8 @@ function FiltersCol(){
     return (
         <div className="col-span-1 bg-neutral-800 rounded-xl py-10 px-5 text-normal text-lg self-start">
             <OrderBox/>
-            <button className="hover:underline cursor-pointer text-3xl font-black mb-5 flex items-center gap-2" onClick={() => setFilter('https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef', 'Tutti i giochi')}><IoGameController />Tutti i giochi</button>
-            <ul className="font-black mb-5" ref={parent}><span className="text-3xl flex items-center gap-2"><FaBook />Generi</span>
+            <button className="hover:underline cursor-pointer text-3xl font-bold mb-5 flex items-center gap-2" onClick={() => setFilter('https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef', 'Tutti i giochi')}><IoGameController />Tutti i giochi</button>
+            <ul className="font-bold mb-5" ref={parent}><span className="text-3xl flex items-center gap-2"><FaBook />Generi</span>
                 {
                     genresStatus === 'pending' && <Loader/>
                 }
@@ -64,7 +64,7 @@ function FiltersCol(){
                     showAllGenres && <button className="hover:text-yellow-200 cursor-pointer text-[yellow]" onClick={() => setShowAllGenres(!showAllGenres)}><BsArrowUpSquareFill className="inline"/> Mostra meno</button>
                 }
             </ul>
-            <ul className="font-black mb-5" ref={parent}><span className="text-3xl flex items-center gap-2"><GiGameConsole />Piattaforme</span>
+            <ul className="font-bold mb-5" ref={parent}><span className="text-3xl flex items-center gap-2"><GiGameConsole />Piattaforme</span>
                 {
                     platStatus === 'pending' && <Loader/>
                 }
@@ -85,7 +85,7 @@ function FiltersCol(){
                     showAllPlatforms && <button className="hover:text-yellow-200 cursor-pointer text-[yellow]" onClick={() => setShowAllPlatforms(!showAllPlatforms)}><BsArrowUpSquareFill className="inline"/> Mostra meno</button>
                 }
             </ul>
-            <Link to="/games/favorites" className="font-black mb-5 hover:underline cursor-pointer"><span className="text-3xl flex items-center gap-2"><FaHeartCircleBolt />Giochi preferiti</span></Link>
+            <Link to="/games/favorites" className="font-bold mb-5 hover:underline cursor-pointer"><span className="text-3xl flex items-center gap-2"><FaHeartCircleBolt />Giochi preferiti</span></Link>
         </div>
     )
 }

@@ -44,7 +44,7 @@ function NavBar(){
             </div>
             <div className="navbar-center">
                 <Link to={'/catalog'}>
-                    <h5 className="hover:outline-3 px-2 py-1 outline-black text-xl text-normal font-black rounded-lg tooltip tooltip-primary tooltip-right cursor-pointer" data-tip="Catalogo Lootly">Lootly</h5>
+                    <h5 className="hover:outline-3 px-2 py-1 outline-black text-xl text-normal font-bold rounded-lg tooltip tooltip-primary tooltip-right cursor-pointer" data-tip="Catalogo Lootly">Lootly</h5>
                 </Link>
             </div>
             <div className="navbar-end gap-5">

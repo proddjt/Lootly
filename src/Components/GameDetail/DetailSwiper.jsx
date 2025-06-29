@@ -18,7 +18,7 @@ function DetailSwiper({id}) {
     if (status === 'pending') return (<div className="flex justify-center items-center"><Loader/></div>);
     return (
         <div className='mb-20'>
-            <p className='text-normal text-center text-3xl font-black highlight uppercase mb-5'>Immagini del gioco</p>
+            <p className='text-normal text-center text-3xl font-bold highlight uppercase mb-5'>Immagini del gioco</p>
             <Swiper
                 pagination={{
                 type: 'progressbar',

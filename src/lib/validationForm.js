@@ -16,8 +16,15 @@ export const FormSchemaLogin = z.object({
     password: z.string(),
 })
 
+export const FormSchemaUpdate = z.object({
+    name: z.string().min(2, "Il nome deve contenere almeno 2 caratteri"),
+    surname: z.string().min(2, "Il cognome deve contenere almeno 2 caratteri"),
+    username: z.string().min(3, "L'username deve contenere almeno 3 caratteri"),
+})
+
 export const ConfirmSchema = FormSchema.refine((data) => data)
 export const ConfirmSchemaLogin = FormSchemaLogin.refine((data) => data)
+export const ConfirmSchemaUpdate = FormSchemaUpdate.refine((data) => data)
 
 export function getFieldError(schema ,property, value){
     const { error } = schema.shape[property].safeParse(value);

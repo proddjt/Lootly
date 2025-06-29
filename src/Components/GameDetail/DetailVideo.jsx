@@ -25,7 +25,7 @@ function DetailVideo({id}){
             {
                 trailers && trailers.count > 0 ?
                 <>
-                    <p className="text-normal text-center text-3xl font-black highlight uppercase">Trailer del gioco</p>
+                    <p className="text-normal text-center text-3xl font-bold highlight uppercase">Trailer del gioco</p>
                     <Swiper
                         style={{
                         '--swiper-navigation-color': '#ffff00',

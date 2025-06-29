@@ -1,10 +1,14 @@
-function SumUpSection ({isEdit, setIsEdit}){
+import Avatar from "./Avatar"
+import EditBtn from "./EditBtn"
+
+function SumUpSection ({isEdit, setIsEdit, session, onUpload, url, setSuccess, setError}){
+    const {user_metadata: user} = session.user
     return (
         <div className="col-span-3 flex flex-col items-end justify-center gap-2">
-            <img src="./download.png" alt="Propic" className="rounded-full"/>
-            <h2 className="text-2xl highlight font-bold text-normal">Nome Cognome</h2>
-            <p className="text-md text-gray-400">@username</p>
-            <button onClick={() => setIsEdit(!isEdit)} disabled={isEdit} className="btn btn-primary">Edit profile</button>
+            <Avatar session={user} onUpload={onUpload} url={url} setSuccess={setSuccess} setError={setError}/>
+            <h2 className="text-2xl highlight font-bold text-normal">{user.first_name} {user.last_name}</h2>
+            <p className="text-md text-gray-400">@{user.username}</p>
+            <EditBtn setIsEdit={setIsEdit} isEdit={isEdit}/>
         </div>
     )
 }
