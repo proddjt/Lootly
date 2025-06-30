@@ -35,6 +35,7 @@ function App() {
   const [title, setTitle] = useState('Tutti i giochi')
   const [order, setOrder] = useState('')
   const [avatarUrl, setAvatarUrl] = useState('')
+  const [hasSeen, setHasSeen] = useState([])
   
   return (
     <div>
