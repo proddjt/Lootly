@@ -12,6 +12,7 @@ import FavoriteBtn from "../Components/Catalog/FavoriteBtn";
 import WebsiteBtn from "../Components/GameDetail/WebsiteBtn";
 import { useMessageStore } from "../App";
 import InfoMessage from "../Components/InfoMessage";
+import ChatBox from "../Components/GameDetail/ChatBox/Chatbox";
 
 function GameDetail (){
     const message = useMessageStore((state) => state.message);
@@ -74,6 +75,7 @@ function GameDetail (){
                             <DetailVideo id={id} />
                         </div>
                     </div>
+                    <ChatBox game={game}/>
                 </>
             }
         </>
