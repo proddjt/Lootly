@@ -1,4 +1,4 @@
-# Lootly 🎮 ![Lootly Logo](/Media/Images/logo.png)
+# Lootly 🎮 !(logo.png)
 
 Benvenuto su **Lootly**, l’app che ogni appassionato di videogiochi sognava e che ora esiste davvero.  
 Immagina un posto dove puoi esplorare tutta la storia del gaming, dai primissimi pixel in bianco e nero di **Tennis for Two** nel 1958, fino alle ultime bombe AAA uscite ieri — e sì, anche quelle in uscita domani.  
@@ -54,16 +54,6 @@ Per farlo ho usato tecnologie e librerie moderne, tra cui:
 
 Lootly è già online e pronto all’uso.  
 👉 [**Vai all’app live su Vercel**](https://lootly.vercel.app)
-
----
-
-## 📂 Extra
-
-Il logo ufficiale si trova qui nel progetto:  
-`/Public/Media/Images/logo.png`
-
-Se ti piace l’idea, lascia una ⭐ su GitHub, condividilo, forka il progetto o... semplicemente, usalo!  
-I videogiochi sono la nostra passione comune. Lootly vuole essere il posto dove questa passione prende forma.
 
 ---
 
