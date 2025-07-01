@@ -15,7 +15,7 @@ function Hero (){
     return (
         <>
         <div>
-            <video src="../src/assets/media/videos/background-video.mp4" autoPlay loop muted className={styles.heroBg}></video>
+            <video src="Media/Videos/background-video.mp4" autoPlay loop muted className={styles.heroBg}></video>
         </div>
         <header className="flex justify-center items-center flex-col max-w-full md:h-screen min-h-screen md:my-0 my-15">
             <div className='flex justify-center items-center w-full md:h-18/20 md:flex-row flex-col'>
