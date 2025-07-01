@@ -3,7 +3,7 @@
 }
 
 .main-bg{
-  background: url('bg.webp');
+  background: url('/bg.webp');
 }
 
 @font-face{
