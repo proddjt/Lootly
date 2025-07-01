@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="assets/logo.png" alt="Lootly Logo" width="50" style="vertical-align: middle;" />
+  <img src="logo.png" alt="Lootly Logo" width="50" style="vertical-align: middle;" />
   Lootly 🎮
 </h1>
 
