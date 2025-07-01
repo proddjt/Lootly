@@ -1,4 +1,7 @@
-# Lootly 🎮 ![Lootly Logo](logo.png)
+<h1 align="center">
+  <img src="assets/logo.png" alt="Lootly Logo" width="50" style="vertical-align: middle;" />
+  Lootly 🎮
+</h1>
 
 Benvenuto su **Lootly**, l’app che ogni appassionato di videogiochi sognava e che ora esiste davvero.  
 Immagina un posto dove puoi esplorare tutta la storia del gaming, dai primissimi pixel in bianco e nero di **Tennis for Two** nel 1958, fino alle ultime bombe AAA uscite ieri — e sì, anche quelle in uscita domani.  
