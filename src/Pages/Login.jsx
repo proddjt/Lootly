@@ -34,7 +34,7 @@ function Login (){
                     rootMargin="-100px"
                     textAlign="center"
                 />
-                <img src="../src/assets/media/images/logo.png" alt="Logo" className="md:w-20 w-10 animate-bounce" loading='lazy'/>
+                <img src="Media/Images/logo.png" alt="Logo" className="md:w-20 w-10 animate-bounce" loading='lazy'/>
             </div>
             <LoginForm />
             <p className="text-normal mt-5 z-1">Non hai un account? <Link to={'/register'} className="text-[yellow] hover:underline cursor-pointer">Registrati</Link></p>

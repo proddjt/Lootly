@@ -23,7 +23,7 @@ function GameCardSwiper({images}){
           ))
           :
           <SwiperSlide>
-            <img src="../src/assets/media/images/game-img-placeholder.webp" alt="Immagine gioco non presente" loading='lazy'/>
+            <img src="Media/Images/game-img-placeholder.webp" alt="Immagine gioco non presente" loading='lazy'/>
           </SwiperSlide>
         }
       </Swiper>
