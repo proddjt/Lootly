@@ -9,9 +9,9 @@ function FavoriteGames(){
     return (
         <div className="min-h-screen">
             <div className="flex justify-center pb-8 pt-10">
-                    <h1 className="text-normal text-4xl font-black">I tuoi giochi preferiti {favs && "(" +favs.length+ ")"}</h1>
+                    <h1 className="text-normal text-4xl font-black md:text-start text-center">I tuoi giochi preferiti {favs && "(" +favs.length+ ")"}</h1>
             </div>
-            <div className="grid grid-cols-4 gap-10 py-5" ref={parent}>
+            <div className="grid md:grid-cols-4 grid-cols-1 gap-10 py-5" ref={parent}>
                 {
                     favs && favs != [] && favs.map((game) => (
                         <FavGameCard key={game.game_id} game={game} />

@@ -117,9 +117,9 @@ function UserProfile(){
     return (
         <div className="min-h-screen flex flex-col justify-around">
             <div className="flex justify-center items-center">
-                <h1 className="text-normal text-4xl font-black highlight">Il tuo profilo</h1>
+                <h1 className="text-normal text-4xl font-black highlight md:mt-0 mt-5">Il tuo profilo</h1>
             </div>
-            <div className="w-full h-full grid grid-cols-6 gap-15 ">
+            <div className="w-full h-full md:grid md:grid-cols-6 flex flex-col gap-15 ">
                 <SumUpSection isEdit={isEdit} setIsEdit={setIsEdit} session={session} url={localAvatarUrl} onUpload={(event, url) => updateAvatar(url)} setSuccess={setSuccess} setError={setError}/>
                 <DetailsSection isEdit={isEdit} setIsEdit={setIsEdit} session={session} state={state} setState={setState} updateProfile={updateProfile} errors={errors} setErrors={setErrors} touchedFields={touchedFields} setTouchedFields={setTouchedFields} submitted={submitted}/>
                 { success && success != "" && <Success text={success} /> }

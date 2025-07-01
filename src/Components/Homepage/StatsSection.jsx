@@ -4,7 +4,7 @@ import styles from "../css/StatsSection.module.css"
 
 function StatsSection(){
     return (
-        <div className="flex justify-center items-center w-full gap-5">
+        <div className="flex justify-center items-center w-full gap-5 md:flex-row flex-col md:px-0 px-10">
             <div className={`${styles.stats} ${styles.shadow} p-2 text-center text-normal`}>
                 <div className={styles.stat}>
                     <div className={styles.statTitle}>Videogames</div>

@@ -18,7 +18,7 @@ function Catalog (){
                 message && message!= "" && <InfoMessage text={message} />
             }
             <SearchBar />
-            <div className="grid grid-cols-6 px-5">
+            <div className="md:grid md:grid-cols-6 flex flex-col px-5">
                 <FiltersCol />
                 <DataGrid />
             </div>

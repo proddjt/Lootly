@@ -63,7 +63,7 @@ function LoginForm(){
 
     return (
 
-        <form onSubmit={onSubmit} noValidate className="fieldset bg-black border-[yellow] rounded-lg w-lg border-3 p-6 text-normal z-1 flex flex-col">
+        <form onSubmit={onSubmit} noValidate className="fieldset bg-black border-[yellow] rounded-lg md:w-lg w-full border-3 p-6 text-normal z-1 flex flex-col">
             {signError && signError !== "" && <Message text={signError} />}
             {signSuccess && signSuccess !== "" && <Success text={signSuccess} />}
             

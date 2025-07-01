@@ -1,6 +1,6 @@
 .wrapper {
   width: 50vw;
-  height: 40vh;
+  height: 50vh;
   position: relative;
   text-align: center;
   display: flex;
@@ -18,7 +18,7 @@
   position: absolute;
   width: var(--w);
   height: var(--h);
-  top: 25%;
+  top: 35%;
   left: calc(50% - (var(--w) / 2) - 2.5px);
   z-index: 2;
   transform-style: preserve-3d;
@@ -58,4 +58,14 @@
       rgba(var(--color-card), 0.6) 80%,
       rgba(var(--color-card), 0.9) 100%
     );
+}
+
+@media screen and (max-width: 767px){
+  .wrapper {
+  width: 80vw;
+}
+.inner {
+  --w: 60px;
+  --h: 90px;
+}
 }

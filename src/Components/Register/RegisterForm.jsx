@@ -73,7 +73,7 @@ function RegisterForm(){
 
     return (
 
-        <form onSubmit={onSubmit} noValidate className="fieldset bg-black border-[yellow] rounded-lg w-lg border-3 p-6 text-normal z-1 flex flex-col">
+        <form onSubmit={onSubmit} noValidate className="fieldset bg-black border-[yellow] rounded-lg md:w-lg w-full border-3 p-6 text-normal z-1 flex flex-col">
             {signError && signError !== "" && <Message text={signError} />}
             {signSuccess && signSuccess !== "" && <Success text={signSuccess} />}
             <label className="label text-lg text-white" htmlFor="username">Username</label>
@@ -105,7 +105,7 @@ function RegisterForm(){
                 autoComplete="on"
             />
             {errors.email && <p className="text-red-500 small">{errors.email}</p>}
-            <div className="flex justify-center items-start gap-3">
+            <div className="flex justify-center items-start gap-3 md:flex-row flex-col">
                 <div className="flex flex-col w-full">
                     <label className="label text-lg text-white" htmlFor="name">Nome</label>
                     <input

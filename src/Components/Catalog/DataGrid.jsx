@@ -23,17 +23,16 @@ function DataGrid (){
         setTitle('Tutti i giochi')
         setUrl('https://api.rawg.io/api/games?key=944825bd001f426384c5e9139fa3f0ef')
     }, [])
-
     if (status === 'error') return <Message text="Qualcosa è andato storto! Riprova"/>
     if (status === 'pending') return <SkeletonCard/>
 
     return (
-        <div className="col-span-5">
-            <div className="flex justify-center pb-8">
+        <div className="md:col-span-5">
+            <div className="flex justify-center pb-8 text-center">
                 <h1 className="text-normal text-4xl font-bold">{title} {data && "(" +data.count+ ")"}</h1>
             </div>
             <div className="flex justify-center">
-                <div className="grid grid-cols-4 gap-10 pt-5">
+                <div className="grid md:grid-cols-4 grid-cols-1 gap-10 pt-5">
                     {
                         data && data.results.map((game, index) => <GameCard key={index} game={game}/>)
                     }

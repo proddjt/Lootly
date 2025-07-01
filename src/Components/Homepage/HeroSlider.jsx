@@ -7,7 +7,7 @@ function HeroSlider(){
     const titles = games.map(game => game.name)
     let count = 0
     return (
-        <div className='flex flex-col justify-center gap-10'>
+        <div className='flex flex-col justify-center items-center md:gap-10 gap-0 w-full'>
             <div className={styles.wrapper}>
                 <div className={styles.inner} style={{"--quantity": 10}}>
                     {games.map(game => {
@@ -36,9 +36,9 @@ function HeroSlider(){
                 splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
                 rotationInterval={2000}
-                className='text-5xl highlight font-bold text-shadow-lg text-shadow-amber-100/20 '
+                className='md:text-5xl text-2xl highlight font-bold text-shadow-lg text-shadow-amber-100/20 '
                 />
-                <h5 className='text-3xl'>e tanto altro...</h5>
+                <h5 className='text-2xl'>e tanto altro...</h5>
             </div>
         </div>
     )

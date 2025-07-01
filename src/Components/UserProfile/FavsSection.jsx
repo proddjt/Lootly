@@ -11,7 +11,7 @@ function FavSection (){
     
     return (
         <>
-        <div className="grid grid-cols-5 gap-10" ref={parent}>
+        <div className="grid md:grid-cols-5 grid-cols-1 gap-10 md:mt-0 mt-8" ref={parent}>
             {
                 favs && favs != [] && favs.length > 0 && (
                     <>

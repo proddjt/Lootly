@@ -42,13 +42,13 @@ function ChatBox({game}){
         <div className="fixed bottom-10 right-4 z-50">
             <button
                 onClick={handleToggle}
-                className=" bg-[yellow] w-80 text-black text-normal font-bold py-2 px-4 rounded-xl shadow-lg flex items-center justify-center text-xl gap-2 hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
+                className=" bg-[yellow] md:w-80 w-60 text-black text-normal font-bold py-2 px-4 rounded-xl shadow-lg flex items-center justify-center md:text-xl text-md gap-2 hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
             >
                 <BiSolidMessageDots /> Discussione sul gioco
             </button>
 
             {isOpen && (
-                <div className="mt-2 w-80 h-120 bg-neutral-800 rounded-xl shadow-xl border-2 border-black flex flex-col overflow-hidden">
+                <div className="mt-2 md:w-80 md:h-120 w-60 h-100 bg-neutral-800 rounded-xl shadow-xl border-2 border-black flex flex-col overflow-hidden">
                     <div className="bg-[yellow] text-black p-4 font-bold text-normal">
                         Chat per {game.name}
                     </div>

@@ -44,7 +44,7 @@ function Stores(){
                         <h1 className="text-normal text-4xl font-black">Stores {data && "(" +data.count+ ")"}</h1>
                 </div>
                 <div className="flex justify-center">
-                    <div className="grid grid-cols-5 gap-10 pt-5">
+                    <div className="grid md:grid-cols-5 grid-cols-1 gap-10 pt-5">
                         {data && data.results.map((store, index) => <SmallCard key={index} data={store} handleModal={handleModal}/>)}
                     </div>
                 </div>

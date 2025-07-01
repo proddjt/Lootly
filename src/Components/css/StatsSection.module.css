@@ -42,3 +42,10 @@
   line-height: 1rem;
   color: yellow;
 }
+
+@media screen and (max-width: 767px){
+  .stats {
+  width: 100%;
+}
+
+}

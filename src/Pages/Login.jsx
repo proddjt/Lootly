@@ -23,7 +23,7 @@ function Login (){
             <div className="flex justify-center items-center gap-5 mb-5">
                 <SplitText
                     text="Accedi a Lootly"
-                    className="text-6xl font-semibold text-center highlight text-normal bg-transparent"
+                    className="md:text-6xl text-3xl font-semibold text-center highlight text-normal bg-transparent"
                     delay={70}
                     duration={0.4}
                     ease="power3.out"
@@ -34,11 +34,11 @@ function Login (){
                     rootMargin="-100px"
                     textAlign="center"
                 />
-                <img src="../src/assets/media/images/logo.png" alt="Logo" className="w-20 animate-bounce" loading='lazy'/>
+                <img src="../src/assets/media/images/logo.png" alt="Logo" className="md:w-20 w-10 animate-bounce" loading='lazy'/>
             </div>
             <LoginForm />
             <p className="text-normal mt-5 z-1">Non hai un account? <Link to={'/register'} className="text-[yellow] hover:underline cursor-pointer">Registrati</Link></p>
-            <div className="flex justify-center items-center gap-5 mt-10">
+            <div className="flex justify-center items-center gap-5 mt-10 md:px-0 px-5">
                 <Link to={'/'} ><LinkBtn text="Torna alla home"/></Link>
                 <Link to={'/catalog'}><LinkBtn text="Torna al catalogo"/></Link>
             </div>

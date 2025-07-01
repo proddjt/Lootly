@@ -24,9 +24,9 @@ function DetailsSection({isEdit, setIsEdit, session, state, setState, updateProf
             setState((prev) => ({ ...prev, [p]: valueSelector ? valueSelector(e) : e.target.value }));
         };
     return (
-        <form className="col-span-4 flex flex-col gap-5 bg-neutral-800 p-10 self-center" onSubmit={updateProfile} noValidate>
-            <div className="flex flex-row justify-center gap-5">
-                <div className="flex flex-col gap-3 w-1/2">
+        <form className="md:col-span-4 flex flex-col gap-5 bg-neutral-800 md:p-10 p-8 w-full self-center" onSubmit={updateProfile} noValidate>
+            <div className="flex md:flex-row flex-col justify-center gap-5">
+                <div className="flex flex-col gap-3 md:w-1/2 w-full">
                     <label className="text-normal text-2xl highlight font-semibold" htmlFor="text">{isEdit ? 'Qual è il tuo nome?' : 'Nome'}</label>
                     <input
                         required
@@ -42,7 +42,7 @@ function DetailsSection({isEdit, setIsEdit, session, state, setState, updateProf
                     />
                     {errors.name && isEdit && <p className="text-red-500 small">{errors.name}</p>}
                 </div>
-                <div className="flex flex-col gap-3 w-1/2">
+                <div className="flex flex-col gap-3 md:w-1/2 w-full">
                     <label className="text-normal text-2xl highlight font-semibold" htmlFor="surname">{isEdit ? 'Qual è il tuo cognome?' : 'Cognome'}</label>
                     <input
                         required
@@ -59,8 +59,8 @@ function DetailsSection({isEdit, setIsEdit, session, state, setState, updateProf
                     {errors.surname && isEdit && <p className="text-red-500 small">{errors.surname}</p>}
                 </div>
             </div>
-            <div className="flex flex-row justify-center gap-5">
-                <div className="flex flex-col gap-3 w-1/2">
+            <div className="flex md:flex-row flex-col justify-center gap-5">
+                <div className="flex flex-col gap-3 md:w-1/2 w-full">
                     <label className="text-normal text-2xl highlight font-semibold" htmlFor="username">{isEdit ? 'Qual è il tuo username?' : 'Username'}</label>
                     <input
                         required
@@ -76,7 +76,7 @@ function DetailsSection({isEdit, setIsEdit, session, state, setState, updateProf
                     />
                     {errors.username && isEdit && <p className="text-red-500 small">{errors.username}</p>}
                 </div>
-                <div className="flex flex-col gap-3 w-1/2">
+                <div className="flex flex-col gap-3 md:w-1/2 w-full">
                     <label className="text-normal text-2xl highlight font-semibold" htmlFor="email">Email</label>
                     <input value={user.email} className="bg-black disabled:bg-neutral-900 disabled:text-neutral-500 text-white p-2 rounded-lg" type="email" id="email" placeholder="La tua email" disabled/>
                 </div>

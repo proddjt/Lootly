@@ -26,7 +26,7 @@ function NotFound (){
                 baseIntensity={0.2} 
                 hoverIntensity={0.5} 
                 enableHover={true}
-                fontSize='3rem'
+                fontSize='2rem'
                 color='#000000'
                 >
                 Pagina non trovata

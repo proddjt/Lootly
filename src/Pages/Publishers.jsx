@@ -45,7 +45,7 @@ function Publishers(){
                         <h1 className="text-normal text-4xl font-black">Editors {data && "(" +data.count+ ")"}</h1>
                 </div>
                 <div className="flex justify-center">
-                    <div className="grid grid-cols-6 gap-10 pt-5">
+                    <div className="grid md:grid-cols-6 grid-cols-1 gap-10 pt-5">
                         {data && data.results.map((publisher, index) => <SmallCard key={index} data={publisher} handleModal={handleModal} type="publisher"/>)}
                     </div>
                 </div>
