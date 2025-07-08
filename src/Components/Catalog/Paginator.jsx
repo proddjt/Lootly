@@ -3,8 +3,7 @@ import { useContext } from "react";
 
 import DataURLContext from "../../Context/DataURLContext";
 
-function Paginator ({nextUrl, prevUrl}){
-    const {url, setUrl} = useContext(DataURLContext);
+function Paginator ({nextUrl, prevUrl, setUrl}){
     const nextPage = () => {
         if (nextUrl && nextUrl != ""){
             setUrl(nextUrl)

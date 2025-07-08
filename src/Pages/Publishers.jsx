@@ -37,7 +37,6 @@ function Publishers(){
 
     if (status === 'error') return <Message text="Qualcosa è andato storto! Riprova"/>
     if (status === 'pending') return <SkeletonCard/>
-
     return (
         <>
             <div className="min-h-screen">
@@ -51,7 +50,7 @@ function Publishers(){
                 </div>
                 <div className="flex justify-center py-10">
                 {
-                    data &&  <Paginator nextUrl={data.next} prevUrl={data.previous}/>
+                    data &&  <Paginator nextUrl={data.next} prevUrl={data.previous} setUrl={setUrl}/>
                 }
                 </div>
                 <DetailModal details={details} type={"publisher"}/>
