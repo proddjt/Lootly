@@ -40,7 +40,7 @@ function DataGrid (){
             </div>
             <div className="flex justify-center py-10">
                 {
-                    data &&  <Paginator nextUrl={data.next} prevUrl={data.previous}/>
+                    data &&  <Paginator nextUrl={data.next} prevUrl={data.previous} setUrl={setUrl}/>
                 }
             </div>
         </div>
